@@ -1,0 +1,258 @@
+body {
+  background: #fefa97;
+  color: #545454;
+  font-family: 'Patrick Hand', 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.site-header {
+  width: 100%;
+  background: #fefa97;
+  position: relative;
+  z-index: 10;
+}
+.banner-photo {
+  width: 100%;
+  height: 120px;
+  background: #acfcfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #545454;
+  border-bottom: 2px solid #acfcfe;
+}
+.top-bar {
+  width: 100%;
+  background: #fefa97;
+  position: sticky;
+  top: 0;
+  transition: opacity 0.4s;
+  z-index: 100;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.menu li {
+  margin: 0 1.5rem;
+}
+.menu a {
+  text-decoration: none;
+  color: #545454;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.menu a:hover {
+  color: #acfcfe;
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.hero-text {
+  flex: 1 1 300px;
+  padding: 2rem;
+}
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.regular-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.button-row {
+  display: flex;
+  gap: 1rem;
+}
+.accent-btn {
+  background: #acfcfe;
+  color: #545454;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(172,252,254,0.15);
+  transition: background 0.2s, color 0.2s;
+}
+.accent-btn:hover {
+  background: #86eaea;
+  color: #545454;
+}
+
+/* lighten buttons and icons when topbar is scrolled (applies across pages) */
+body.topbar-scrolled .accent-btn,
+body.topbar-scrolled .icon-btn {
+  opacity: 0.8;
+  filter: brightness(1.1);
+}
+
+/* keep footer icons unchanged even when scrolled */
+.site-footer .icon-btn {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* smoother transitions */
+.accent-btn, .icon-btn {
+  transition: background 0.18s ease, color 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+}
+.hero-image {
+  flex: 1 1 300px;
+  min-width: 250px;
+  min-height: 200px;
+  background: #acfcfe;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #545454;
+  margin: 2rem;
+}
+.issues-main .large-textbox {
+  width: 80%;
+  margin: 2rem auto;
+  min-height: 300px;
+  background: #acfcfe;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #545454;
+}
+.site-footer {
+  width: 100%;
+  background: #acfcfe;
+  color: #545454;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0 1rem 0;
+  margin-top: 2rem;
+}
+.footer-content {
+  margin-bottom: 1rem;
+}
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.icon-btn:hover {
+  background: #fefa97;
+}
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .hero-text, .hero-image {
+    margin: 0.5rem 0;
+    padding: 1rem;
+  }
+  .issues-main .large-textbox {
+    width: 95%;
+    min-height: 200px;
+    font-size: 1rem;
+  }
+}
+
+/* About page member list */
+.team-list {
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  gap: 1rem; /* reduced gap to tighten horizontal spacing */
+  justify-content: space-around; /* distribute blocks and fill right-side gap */
+  flex-wrap: wrap;
+}
+.member {
+  display: flex;
+  gap: 0.75rem; /* smaller gap between photo and text */
+  align-items: flex-start;
+  flex: 0 0 44%; /* slightly larger (≈1.375x) to fill horizontal space */
+  min-width: 220px;
+  background: rgba(255,255,255,0.2);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.member-photo {
+  flex: 0 0 40%; /* take ~40% of the member box width */
+  aspect-ratio: 1 / 1; /* square box */
+  background: #acfcfe;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #545454;
+  overflow: hidden;
+}
+.member-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.member-title {
+  margin: 0 0 0.5rem 0;
+}
+.member-text p {
+  margin: 0;
+}
+
+/* banner and hero images */
+.banner-img { width: 100%; height: 120px; object-fit: contain; display: block; }
+.hero-img { max-width: 70%; height: auto; display: block; }
+.subheading { font-size: 1.25rem; margin: 0.5rem 0; }
+.coming-soon { font-size: 20rem; }
+
+@media (max-width: 900px) {
+  .team-list { gap: 0.8rem; }
+}
+
+@media (max-width: 700px) {
+  .team-list { flex-direction: column; width: 95%; }
+  .member { width: 100%; flex: 0 0 100%; }
+  .member-photo { flex: 0 0 120px; aspect-ratio: 1 / 1; }
+  .member-photo-img { object-fit: cover; }
+}
+
+/* image placeholders */
+.placeholder-filename {
+  font-size: 0.85rem;
+  color: #545454;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.hero-image img, .member-photo img { max-width: 100%; height: auto; display: block; }
+.hero-image { position: relative; }
+.textbox { position: relative; }
+
+/* center title and subheading on the homepage only */
+.homepage-main .title,
+.homepage-main .subheading {
+  text-align: center;
+}
